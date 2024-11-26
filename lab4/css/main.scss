@@ -1,0 +1,66 @@
+@import "palette";
+@import "mixin";
+
+body {
+  color: #333;
+  font-family: Arial, Helvetica, serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  background: url(https://josetxu.com/img/fondo_blanco.png) repeat 0 0 #fff;
+}
+
+h1 {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 5% 0;
+  padding: 0.5em;
+  margin: 0 0 5% 0;
+}
+
+.cardBox {
+  @include cardBox;
+
+  &:nth-child(1) .card {
+    @include card(1s, cornflowerblue);
+  }
+
+  &:nth-child(2) .card {
+    @include card(1.5s, orange);
+  }
+
+  &:nth-child(3) .card {
+    @include card(2s, yellowgreen);
+  }
+
+  &:nth-child(4) .card {
+    @include card(2.5s, tomato);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cardBox {
+    margin-left: 2.8%;
+    margin-top: 3%;
+    width: 46%;
+  }
+
+  .card {
+    height: 285px;
+  }
+
+  .cardBox:last-child {
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cardBox {
+    width: 94.5%;
+  }
+
+  .card {
+    height: 260px;
+  }
+}
